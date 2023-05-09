@@ -31,3 +31,20 @@ You can make any modifications or suggestions for modifications that you see fit
 ## Help I dont know C# or Java
 No worries! We accept submissions in other languages as well, why not try it in Go or nodejs.
 
+
+## How to run docker
+Build the Docker image:
+This command builds the Docker image from the Dockerfile and tags it with the name dockerfile .
+```
+docker build -t dockerfile .
+```
+
+
+This command runs the Docker container, sets the name to my-postgres-container, sets the Postgres password to mypassword, maps the host port 5432 to the container port 5432, and runs the container in the background.
+```
+docker run --name my-postgres-container -e POSTGRES_PASSWORD=mypassword -p 5432:5432 -d dockerfile
+```
+Connect to the Postgres database, or you can use database tool, like DBeaber (database name, username and pasword in dockerfile )
+```
+psql -h localhost -p 5432 -U postgres
+```
