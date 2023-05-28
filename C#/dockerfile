@@ -1,5 +1,9 @@
 FROM postgres:latest
+
 ENV POSTGRES_USER myuser
 ENV POSTGRES_PASSWORD mypassword
 ENV POSTGRES_DB mydb
-COPY toll_prices.sql CSharp/
+
+COPY toll_prices.sql /docker-entrypoint-initdb.d/
+
+EXPOSE 5432
