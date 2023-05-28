@@ -1,9 +1,10 @@
 CREATE TABLE toll_prices (
-  ID INT PRIMARY KEY AUTO_INCREMENT,
+  ID SERIAL PRIMARY KEY,
   start_time TIME,
   end_time TIME,
   toll_price NUMERIC(5,2)
 );
+
 
 INSERT INTO toll_prices (start_time, end_time, toll_price)
 VALUES
